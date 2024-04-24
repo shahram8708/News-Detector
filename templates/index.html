@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>News Detector</h1>
+        <p>Detect if the News is Real or Fake!</p>
+    </header>
+    <main>
+        <section class="generator">
+            <h2>News Detector</h2>
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            <form action="/search" method="post">
+                <input type="text" name="search_query" placeholder="Enter News Headline or Article...">
+                <button type="submit">Detect</button>
+            </form>
+        </section>
+        <section class="about">
+            <h2>About</h2>
+            <p>Welcome to News Detector! Enter a news Headline or Article to detect if it's real or fake. Our advanced
+                AI algorithms analyze the text to provide accurate results.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 News Detector. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
