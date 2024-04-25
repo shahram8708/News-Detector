@@ -25,10 +25,10 @@ def search():
             story_content = extract_story_content(response)
             if story_content:
                 return render_template('result.html', story_content=story_content)
-        error_msg = "Failed to generate story content. Please try again."
+        error_msg = "Failed to detect news fake or real. Please try again."
         return render_template('index.html', error=error_msg)
     else:
-        error_msg = "Please enter a valid story prompt."
+        error_msg = "Please enter a valid article or headline prompt."
         return render_template('index.html', error=error_msg)
 
 def generate_story(prompt):
